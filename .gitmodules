@@ -1,0 +1,3 @@
+[submodule "ntex-remove-trailing-slash"]
+	path = ntex-remove-trailing-slash
+	url = git@github.com:ir1keren/ntex-remove-trailing-slash
