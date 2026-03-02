@@ -10,7 +10,7 @@ use std::path::PathBuf;
 
 lazy_static! {
     static ref RELOADER: AutoReloader = AutoReloader::new(|notifier| {
-        let template_dir = PathBuf::from("ntex/templates");
+        let template_dir = PathBuf::from("templates");
         notifier.watch_path(&template_dir, true);
         let mut env = minijinja::Environment::new();
         env.set_loader(minijinja::path_loader(&template_dir));
