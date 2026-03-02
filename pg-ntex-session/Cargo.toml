@@ -1,5 +1,5 @@
 [package]
-name = "protect-assets-actix"
+name = "pg-ntex-session"
 version = "0.1.0"
 edition = "2024"
 

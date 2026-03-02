@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Already Logged In – nTex Protect Assets Demo</title>
+    <link rel="stylesheet" href="/assets/css/login.css" />
+    <style>
+        .card-inner {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, .4);
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+        }
+
+        .check-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, .15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            margin-bottom: 6px;
+            animation: pop .4s cubic-bezier(.17, .89, .32, 1.28);
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .already-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -.03em;
+        }
+
+        .already-sub {
+            color: var(--muted);
+            font-size: .925rem;
+            line-height: 1.55;
+        }
+
+        .badge {
+            background: rgba(99, 102, 241, .12);
+            border: 1px solid rgba(99, 102, 241, .3);
+            color: var(--accent);
+            border-radius: 999px;
+            padding: 4px 14px;
+            font-size: .825rem;
+            font-weight: 600;
+            letter-spacing: .02em;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .btn-secondary {
+            width: 100%;
+            padding: 11px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--muted);
+            font-size: .95rem;
+            font-weight: 500;
+            font-family: inherit;
+            cursor: pointer;
+            transition: border-color .2s, color .2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--text);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+
+    <main class="card">
+        <div class="card-inner">
+            <div class="check-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+                    <path fill-rule="evenodd"
+                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+
+            <span class="badge">Session Active</span>
+
+            <h1 class="already-title">You're already logged in</h1>
+            <p class="already-sub">
+                Your session is active. You don't need to log in again.
+            </p>
+
+            <div class="btn-group">
+                <a href="/" style="text-decoration:none;">
+                    <button class="btn-primary" style="margin-top:0;">Go to Dashboard</button>
+                </a>
+                <a href="/logout" style="text-decoration:none;">
+                    <button class="btn-secondary">Logout</button>
+                </a>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+
+</html>

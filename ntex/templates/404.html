@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 – Not Found</title>
+    <link rel="stylesheet" href="/assets/css/login.css" />
+    <style>
+        .card-inner {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 48px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, .4);
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+        }
+
+        .code {
+            font-size: 6rem;
+            font-weight: 800;
+            letter-spacing: -.05em;
+            line-height: 1;
+            background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pop .4s cubic-bezier(.17, .89, .32, 1.28);
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .msg {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -.02em;
+        }
+
+        .sub {
+            color: var(--muted);
+            font-size: .9rem;
+            line-height: 1.55;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+
+    <main class="card">
+        <div class="card-inner">
+            <div class="code">404</div>
+            <p class="msg">Page not found</p>
+            <p class="sub">The file or page you're looking for doesn't exist or has been moved.</p>
+            <a href="/" style="text-decoration:none;width:100%;margin-top:8px;">
+                <button class="btn-primary" style="margin-top:0;">Go Home</button>
+            </a>
+        </div>
+    </main>
+</body>
+
+</html>

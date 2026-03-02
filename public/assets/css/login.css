@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0a0d14;
+  --card-bg:   #10141f;
+  --border:    #1e2535;
+  --accent:    #6366f1;
+  --accent-h:  #4f52e0;
+  --text:      #e2e8f0;
+  --muted:     #64748b;
+  --error-bg:  rgba(239,68,68,.12);
+  --error:     #f87171;
+  --input-bg:  #161b2b;
+  --radius:    14px;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* animated gradient background */
+.bg {
+  position: fixed; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(99,102,241,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 90%, rgba(139,92,246,.12) 0%, transparent 60%);
+  animation: drift 12s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes drift {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06) translateY(-2%); }
+}
+
+/* card */
+main.card {
+  position: relative; z-index: 1;
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 24px;
+}
+
+.card > * { width: 100%; max-width: 420px; }
+
+.logo {
+  color: var(--accent);
+  display: flex; justify-content: center;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px rgba(99,102,241,.5));
+}
+
+h1 {
+  font-size: 1.75rem; font-weight: 700; letter-spacing: -.03em;
+  text-align: center; margin-bottom: 6px;
+}
+.subtitle {
+  text-align: center; color: var(--muted); font-size: .925rem; margin-bottom: 32px;
+}
+
+/* error banner */
+.error-banner {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--error-bg); border: 1px solid rgba(239,68,68,.25);
+  color: var(--error); border-radius: 10px;
+  padding: 10px 14px; font-size: .875rem;
+  margin-bottom: 20px;
+  animation: shake .35s ease;
+}
+@keyframes shake {
+  0%,100%{ transform: translateX(0); }
+  20%{ transform: translateX(-6px); }
+  40%{ transform: translateX(6px); }
+  60%{ transform: translateX(-4px); }
+  80%{ transform: translateX(4px); }
+}
+.error-banner svg { flex-shrink: 0; }
+
+/* form */
+form {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex; flex-direction: column; gap: 20px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.4);
+}
+
+.field {
+  display: flex; flex-direction: column; gap: 6px;
+}
+label {
+  font-size: .8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em;
+}
+input {
+  width: 100%; padding: 11px 14px;
+  background: var(--input-bg); border: 1px solid var(--border);
+  border-radius: 10px; color: var(--text); font-size: .95rem; font-family: inherit;
+  outline: none; transition: border-color .2s, box-shadow .2s;
+}
+input::placeholder { color: #3a4155; }
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99,102,241,.2);
+}
+
+/* password toggle */
+.password-wrap { position: relative; }
+.password-wrap input { padding-right: 44px; }
+#toggle-pw {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer; color: var(--muted); display: flex;
+  transition: color .2s;
+}
+#toggle-pw:hover { color: var(--text); }
+
+/* submit button */
+.btn-primary {
+  width: 100%; padding: 12px;
+  background: var(--accent); border: none; border-radius: 10px;
+  color: #fff; font-size: 1rem; font-weight: 600; font-family: inherit;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+  transition: background .2s, transform .1s, box-shadow .2s;
+  box-shadow: 0 4px 20px rgba(99,102,241,.35);
+  margin-top: 4px;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent-h);
+  box-shadow: 0 6px 28px rgba(99,102,241,.5);
+}
+.btn-primary:active:not(:disabled) { transform: scale(.98); }
+.btn-primary:disabled { opacity: .6; cursor: not-allowed; }
+
+/* spinner */
+.spinner {
+  width: 18px; height: 18px;
+  border: 2px solid rgba(255,255,255,.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.hidden { display: none !important; }
