@@ -40,3 +40,5 @@ $ cargo run --package protect-assets-actix --bin protect-assets-actix
 # OR run the ntex implementation
 $ cargo run --package protect-assets-ntex --bin protect-assets-ntex
 ```
+
+[![Demo Protected Asset](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FIEazIgRDBig)](https://youtu.be/IEazIgRDBig)
